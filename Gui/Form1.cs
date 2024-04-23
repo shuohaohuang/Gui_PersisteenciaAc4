@@ -1,4 +1,7 @@
-﻿namespace Gui
+﻿using Gui.dao.Persistence.DAO;
+using Gui.dao.Persistence.Mapping;
+using Gui.dao.Persistence.Npgsql;
+namespace Gui
 {
     public partial class Form1 : Form
     {
@@ -33,7 +36,8 @@
             PopulationColunm = 3,
             DomConColunm = 4,
             MinPopulation = 200000,
-            MaxYear = 2050;
+            MaxYear = 2050,
+            EmptyIndex = -1;
 
         public Form1()
         {
@@ -160,8 +164,8 @@
 
         public void CleanInputs()
         {
-            cbbCounty.Text = string.Empty;
-            cbbYear.Text = string.Empty;
+            cbbCounty.SelectedIndex = EmptyIndex;
+            cbbYear.SelectedIndex = EmptyIndex;
             txtDX.Text = string.Empty;
             txtCDC.Text = string.Empty;
             txtAE.Text = string.Empty;
@@ -176,10 +180,34 @@
 
         private void bttSave_Click(object sender, EventArgs e)
         {
+            County county = Checkvalues(); 
+            if (county!=null)
+            {
+                int index = dgvCounties.Rows.Add();
+                dgvCounties.Rows[index].Cells[Year].Value = county.Year;
+                dgvCounties.Rows[index].Cells[Code].Value = county.Year;
+                dgvCounties.Rows[index].Cells[Name].Value = county.CountyName;
+                dgvCounties.Rows[index].Cells[Population].Value = county.Population;
+                dgvCounties.Rows[index].Cells[DomNet].Value = county.DomesticNetwork;
+                dgvCounties.Rows[index].Cells[EcoActs].Value = county.EconomicActivities;
+                dgvCounties.Rows[index].Cells[Total].Value = county.Total;
+                dgvCounties.Rows[index].Cells[ConDomCap].Value = county.DomesticConsumptionPerCapita;
+
+                Csv.Write(
+                    new List<County>()
+                    {
+                        county
+                    }
+                );
+                CleanInputs();
+            }
+        }
+        private County Checkvalues()
+        {
             List<TextBox> list = new List<TextBox>() { txtDX, txtCDC, txtAE, txtTotal };
             List<ComboBox> comboBoxes = new List<ComboBox>() { cbbYear, cbbCounty };
             errPro.Clear();
-
+            CountyDAO countyDAO = new(NpgsqlUtils.OpenConnection());
             bool AllCorrector = true;
 
             foreach (var item in list)
@@ -220,26 +248,20 @@
                     cDC = Convert.ToInt32(txtCDC.Text),
                     code = cbbCounty.SelectedIndex + One;
                 string county = cbbCounty.Text.ToString();
-
-                int index = dgvCounties.Rows.Add();
-                dgvCounties.Rows[index].Cells[Year].Value = year;
-                dgvCounties.Rows[index].Cells[Code].Value = code;
-                dgvCounties.Rows[index].Cells[Name].Value = county;
-                dgvCounties.Rows[index].Cells[Population].Value = population;
-                dgvCounties.Rows[index].Cells[DomNet].Value = dX;
-                dgvCounties.Rows[index].Cells[EcoActs].Value = aE;
-                dgvCounties.Rows[index].Cells[Total].Value = total;
-                dgvCounties.Rows[index].Cells[ConDomCap].Value = cDC;
-                Csv.Write(
-                    new List<County>()
-                    {
-                        new County(year, code, county, population, dX, aE, total, cDC)
-                    }
-                );
+                return new County(year, code, county, population, dX, aE, total, cDC);
+            }
+            return null;
+        }
+        private void bttbbdd_Click(object sender, EventArgs e)
+        {
+            County county = Checkvalues();
+            if (county != null) 
+            {
+                CountyDAO countyDAO = new(NpgsqlUtils.OpenConnection());
+                countyDAO.AddCounty(new(county));
                 CleanInputs();
+
             }
         }
-
-        private void cbbCounty_SelectedValueChanged(object sender, EventArgs e) { }
     }
 }

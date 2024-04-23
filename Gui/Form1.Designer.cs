@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
             lblInfo = new Label();
             lblInfo2 = new Label();
             lblInfo3 = new Label();
@@ -59,6 +59,7 @@
             lblGb2_2 = new Label();
             dgvCounties = new DataGridView();
             errPro = new ErrorProvider(components);
+            bttbbdd = new Button();
             gb1.SuspendLayout();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvCounties).BeginInit();
@@ -110,7 +111,6 @@
             cbbCounty.Name = "cbbCounty";
             cbbCounty.Size = new Size(125, 23);
             cbbCounty.TabIndex = 2;
-            cbbCounty.SelectedValueChanged += cbbCounty_SelectedValueChanged;
             // 
             // label1
             // 
@@ -158,7 +158,7 @@
             // bttClear
             // 
             bttClear.AllowDrop = true;
-            bttClear.Location = new Point(363, 315);
+            bttClear.Location = new Point(290, 315);
             bttClear.Name = "bttClear";
             bttClear.Size = new Size(75, 23);
             bttClear.TabIndex = 8;
@@ -168,7 +168,7 @@
             // 
             // bttSave
             // 
-            bttSave.Location = new Point(494, 315);
+            bttSave.Location = new Point(371, 315);
             bttSave.Name = "bttSave";
             bttSave.Size = new Size(75, 23);
             bttSave.TabIndex = 9;
@@ -325,16 +325,16 @@
             dgvCounties.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvCounties.Location = new Point(12, 349);
             dgvCounties.Name = "dgvCounties";
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = SystemColors.Control;
-            dataGridViewCellStyle1.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            dgvCounties.RowHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleRight;
-            dgvCounties.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = SystemColors.Control;
+            dataGridViewCellStyle5.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle5.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.True;
+            dgvCounties.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleRight;
+            dgvCounties.RowsDefaultCellStyle = dataGridViewCellStyle6;
             dgvCounties.Size = new Size(860, 253);
             dgvCounties.TabIndex = 26;
             dgvCounties.CellClick += dgvCounties_CellClick;
@@ -343,11 +343,22 @@
             // 
             errPro.ContainerControl = this;
             // 
+            // bttbbdd
+            // 
+            bttbbdd.Location = new Point(452, 315);
+            bttbbdd.Name = "bttbbdd";
+            bttbbdd.Size = new Size(117, 23);
+            bttbbdd.TabIndex = 27;
+            bttbbdd.Text = "Guardar en Núvol";
+            bttbbdd.UseVisualStyleBackColor = true;
+            bttbbdd.Click += bttbbdd_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(884, 643);
+            Controls.Add(bttbbdd);
             Controls.Add(dgvCounties);
             Controls.Add(groupBox1);
             Controls.Add(gb1);
@@ -396,5 +407,6 @@
         private TextBox txtDX;
         private TextBox txtPopulation;
         private ErrorProvider errPro;
+        private Button bttbbdd;
     }
 }
