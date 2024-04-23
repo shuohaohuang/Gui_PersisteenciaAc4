@@ -14,6 +14,6 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Gui
-build_property.ProjectDir = C:\Users\mnm\source\repos\Gui_PersisteenciaAc4\Gui\
+build_property.ProjectDir = C:\Users\mnm\Source\Repos\Gui_PersisteenciaAc4\Gui\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 

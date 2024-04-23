@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\mnm\\source\\repos\\Gui_PersisteenciaAc4\\Gui\\Gui.csproj": {}
+    "C:\\Users\\mnm\\Source\\Repos\\Gui_PersisteenciaAc4\\Gui\\Gui.csproj": {}
   },
   "projects": {
-    "C:\\Users\\mnm\\source\\repos\\Gui_PersisteenciaAc4\\Gui\\Gui.csproj": {
+    "C:\\Users\\mnm\\Source\\Repos\\Gui_PersisteenciaAc4\\Gui\\Gui.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\mnm\\source\\repos\\Gui_PersisteenciaAc4\\Gui\\Gui.csproj",
+        "projectUniqueName": "C:\\Users\\mnm\\Source\\Repos\\Gui_PersisteenciaAc4\\Gui\\Gui.csproj",
         "projectName": "Gui",
-        "projectPath": "C:\\Users\\mnm\\source\\repos\\Gui_PersisteenciaAc4\\Gui\\Gui.csproj",
+        "projectPath": "C:\\Users\\mnm\\Source\\Repos\\Gui_PersisteenciaAc4\\Gui\\Gui.csproj",
         "packagesPath": "C:\\Users\\mnm\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\mnm\\source\\repos\\Gui_PersisteenciaAc4\\Gui\\obj\\",
+        "outputPath": "C:\\Users\\mnm\\Source\\Repos\\Gui_PersisteenciaAc4\\Gui\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
