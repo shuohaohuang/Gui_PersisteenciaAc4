@@ -100,3 +100,4 @@ C:\Users\mnm\Source\Repos\Gui_PersisteenciaAc4\Gui\obj\Debug\net8.0-windows\refi
 C:\Users\mnm\Source\Repos\Gui_PersisteenciaAc4\Gui\obj\Debug\net8.0-windows\Gui.pdb
 C:\Users\mnm\Source\Repos\Gui_PersisteenciaAc4\Gui\obj\Debug\net8.0-windows\Gui.genruntimeconfig.cache
 C:\Users\mnm\Source\Repos\Gui_PersisteenciaAc4\Gui\obj\Debug\net8.0-windows\ref\Gui.dll
+C:\Users\mnm\source\repos\Gui_PersisteenciaAc4\Gui\bin\Debug\net8.0-windows\appsettings.json

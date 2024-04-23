@@ -16,7 +16,7 @@ namespace Gui.dao.Persistence.Npgsql
             // Carregar la cadena de connexió a la base de dades des de l'arxiu de configuració
             IConfiguration config = new ConfigurationBuilder()
                 .AddJsonFile(
-                    "appsettings.json",
+                    @"appsettings.json",
                     optional: false,
                     reloadOnChange: true
                 )
